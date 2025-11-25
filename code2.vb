@@ -49,7 +49,7 @@ Public Class Form2
     End Sub
     Private Sub Label2_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Label2.Click
     End Sub
-    Private Sub TextBox2_TextChanged(ByVal sender As System.Object, Byval e As System.EventAngs) Handles TextBox2.TextChanged
+    Private Sub TextBox2_TextChanged(ByVal sender As System.Object, Byval e As System.EventArgs) Handles TextBox2.TextChanged
     End Sub
     Private Sub Label3_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Label3.Click
     End Sub

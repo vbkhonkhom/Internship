@@ -19,7 +19,7 @@ Public Class Form3
     ' [ปุ่ม Stop] ปุ่มสำหรับสั่งหยุดการทำงาน
     Private Sub Button1_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button1.Click
         ' สั่ง ReportProgress ไปที่ BackgroundWorker เพื่อแจ้งสถานะว่า "กำลังหยุด" (Stop_Coonvert)
-        Form1.BackgroundWorker1.ReportProgress(Form1.Stop_Coonvert)
+        Form1.BackgroundWorker1.ReportProgress(Form1.Stop_Convert)
         
         ' สั่ง CancelAsync เพื่อยกเลิกเธรดที่ทำงานอยู่เบื้องหลัง
         Form1.BackgroundWorker1.CancelAsync()

@@ -23,7 +23,7 @@ Public Class Form1
     Public OKFlag As Boolean
 
     ' Form Load: เริ่มต้นทำงานเมื่อเปิดโปรแกรม
-    Private Sub Form1_Load(ByVal sender As System.Object, ByVale As System.EventArds) Handles MyBase.Load
+    Private Sub Form1_Load(ByVal sender As System.Object, ByVale As System.EventArgs) Handles MyBase.Load
         Button2.Enabled = False
         Button4.Enabled = False
         ReadConfigData() ' อ่านค่า Config เก่า
@@ -69,7 +69,7 @@ Public Class Form1
     ' บันทึก Config ลงไฟล์
     Public Sub SaveConfigData()
         Dim str1 As String
-        Dim strFileName As String = strCDir & "\Config-csv"
+        Dim strFileName As String = strCDir & "\Config.csv"
         ' sw1: Object สำหรับเขียนไฟล์ Text
         Dim sw1 As New System.IO.StreamWriter(strFileName, False, System.Text.Encoding.Default)
         str1 = Err.Description
@@ -146,7 +146,7 @@ Public Class Form1
     End Function
 
     ' ฟังก์ชัน Insert ข้อมูลจำนวนมากลง Server
-    Public Sub To_Servere(ByVal Array0(,) As String, ByVal Array1(,) As String)
+    Public Sub To_Server(ByVal Array0(,) As String, ByVal Array1(,) As String)
         Dim Cn As New SqlConnection
         Dim strSQL As String
         Dim SQLCm As SqlCommand = Cn.CreateCommand
