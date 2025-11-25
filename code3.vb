@@ -5,7 +5,7 @@ Public Class Form3
     End Sub
 
     ' ก่อนฟอร์มจะปิด
-    Private Sub Form3_FormClosing(ByVal sender As Object, ByVal e As System.Windows.Forms.FormClosedEvevtArgs) Handles Me.FormClosing
+    Private Sub Form3_FormClosing(ByVal sender As Object, ByVal e As System.Windows.Forms.FormClosedEventArgs) Handles Me.FormClosing
         ' StopFlag: ตัวแปร Boolean ใน Form1 เพื่อบอกลูปทำงานหลักว่า "ให้หยุดทำงานได้แล้ว"
         Form1.StopFlag = True 
         

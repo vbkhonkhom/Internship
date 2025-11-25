@@ -220,7 +220,7 @@ Public Class Form1
     Dim Write_times As Integer = 0
 
     ' [ปุ่ม Start] เริ่มการแปลงข้อมูล
-    Private Sub Butto1_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button1.Click
+    Private Sub Button1_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button1.Click
         Form4.Close()
         If StrServerConnection_RIST = "" Then
             MsgBox("Set the RIST server connection string.")
@@ -344,6 +344,8 @@ Public Class Form1
 			For i As Integer = 0 To _BidList.Count -1
 				If InStr(_DidList(i), _BidList(i)) = 0 then					eCode = "c get_Data_LOT_DATA_TBL InStr(_DidList(i), _BidList(i)) = 0 "& _BidList(i) & " " & _DidList(i)
 					Dim g As Integer = "w"
+				End if
+			Next 
         ' ... (ตรวจสอบ Integrity ของข้อมูล) ...
 
         eCode = "d Get_Data_LOT_DATA_TBL"
