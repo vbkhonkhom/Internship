@@ -25,7 +25,7 @@ Public Class Form2
         
         ' DateTimePicker1.Value: เก็บวันที่เริ่มต้น (Start Date) ที่ User เลือก
         ' Format(): แปลงวันที่เป็น String รูปแบบมาตรฐาน Database (yyyy-MM-dd ...)
-        Form1.StrStartDate = Format(DateTimePicker1.Value, "yyyy-My-dd 00:00:00.000")
+        Form1.StrStartDate = Format(DateTimePicker1.Value, "yyyy-MM-dd 00:00:00.000")
         
         ' เรียกฟังก์ชันบันทึกลงไฟล์ CSV
         Form1.SaveConfigData()
@@ -37,7 +37,7 @@ Public Class Form2
     ' เมื่อโหลดฟอร์ม ให้ดึงค่าเดิมมาแสดง
     Private Sub Form2_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
         ' ดึงค่าจากตัวแปรใน Form1 มาใส่ในกล่องข้อความเพื่อให้ User แก้ไข
-        TextBox1.Text = Forml.StrServerConnection_RIST
+        TextBox1.Text = Form1.StrServerConnection_RIST
         TextBox2.Text = Form1.StrServerConnection_Yuku
         DateTimePicker1.Value = Form1.StrStartDate
     End Sub

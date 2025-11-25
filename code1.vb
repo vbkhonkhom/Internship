@@ -23,7 +23,7 @@ Public Class Form1
     Public OKFlag As Boolean
 
     ' Form Load: เริ่มต้นทำงานเมื่อเปิดโปรแกรม
-    Private Sub Form1_Load(ByVal sender As System.Object, ByVale As System.EventArgs) Handles MyBase.Load
+    Private Sub Form1_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
         Button2.Enabled = False
         Button4.Enabled = False
         ReadConfigData() ' อ่านค่า Config เก่า
@@ -49,7 +49,7 @@ Public Class Form1
             If temp(0).Trim(Chr(34)) <> "" Then
                 If temp(0) = "Server_RIST" Then
                     StrServerConnection_RIST = temp(1)
-                ElseIf temp(e) = "Server_Yukuhashi" Then
+                ElseIf temp(0) = "Server_Yukuhashi" Then
                     StrServerConnection_Yuku = temp(1)
                 ElseIf temp(0) = "StartDate" Then
                     StrStartDate = temp(1)
@@ -99,7 +99,7 @@ Public Class Form1
             Cn.ConnectionString = StrServerConnection_Yuku
             table.Clear()
             strSQL = "SELECT iID"
-            strSQL &= "FROM SPC_Master"
+            strSQL &= " FROM SPC_Master"
             
             Adapter = New SqlDataAdapter()
             Adapter.SelectCommand = New SqlCommand(strSQL, Cn)
@@ -340,7 +340,10 @@ Public Class Form1
         If Not _Bidlist.Count = _DidList.Count Then
             eCode = "b Get_Data_LOT_DATA_TBL Not _BidList.Count = _DidList.Count " & _Bidlist.Count & "  " & _DidList.Count
             Dim g As Integer = "w"
-        End If
+        End If 
+			For i As Integer = 0 To _BidList.Count -1
+				If InStr(_DidList(i), _BidList(i)) = 0 then					eCode = "c get_Data_LOT_DATA_TBL InStr(_DidList(i), _BidList(i)) = 0 "& _BidList(i) & " " & _DidList(i)
+					Dim g As Integer = "w"
         ' ... (ตรวจสอบ Integrity ของข้อมูล) ...
 
         eCode = "d Get_Data_LOT_DATA_TBL"
@@ -444,7 +447,7 @@ Public Class Form1
             Next
         ElseIf _Bidlist.Count < _TableL.Rows.Count Then
             eCode = "cc Get_Data_LOT_DATA_TBL_BidList.Count < _Tablel.Rows.Count " & _Bidlist.Count & " " & _TableL.Rows.Count & " " & _F_BATCHID & " " & _E_BATCHID
-            Dim g As Integer = "W"
+            Dim g As Integer = "w"
         End If
     End Sub
 

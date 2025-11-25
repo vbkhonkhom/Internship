@@ -5,7 +5,7 @@ Public Class Form3
     End Sub
 
     ' ก่อนฟอร์มจะปิด
-    Private Sub Form3_FormClosed(ByVal sender As Object, ByVal e As System.Windows.Forms.FormClosedEvevtArgs) Handles Me.FormClosing
+    Private Sub Form3_FormClosing(ByVal sender As Object, ByVal e As System.Windows.Forms.FormClosedEvevtArgs) Handles Me.FormClosing
         ' StopFlag: ตัวแปร Boolean ใน Form1 เพื่อบอกลูปทำงานหลักว่า "ให้หยุดทำงานได้แล้ว"
         Form1.StopFlag = True 
         
@@ -18,7 +18,7 @@ Public Class Form3
 
     ' [ปุ่ม Stop] ปุ่มสำหรับสั่งหยุดการทำงาน
     Private Sub Button1_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button1.Click
-        ' สั่ง ReportProgress ไปที่ BackgroundWorker เพื่อแจ้งสถานะว่า "กำลังหยุด" (Stop_Coonvert)
+        ' สั่ง ReportProgress ไปที่ BackgroundWorker เพื่อแจ้งสถานะว่า "กำลังหยุด" (Stop_Convert)
         Form1.BackgroundWorker1.ReportProgress(Form1.Stop_Convert)
         
         ' สั่ง CancelAsync เพื่อยกเลิกเธรดที่ทำงานอยู่เบื้องหลัง
